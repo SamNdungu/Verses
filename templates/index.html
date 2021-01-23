@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Favourite Verses</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+    <nav style="margin-top: 25px; margin-left: 45px;">
+        <a class="btn btn-primary" href="{{ url_for('verses') }}">Add a Bible Verse</a>
+    </nav>
+    <br>
+
+    <div class="container theme-showcase" role="main">
+        <div style="color: #fff; background-color: teal;", class="jumbotron">
+            <h2>My Favourite Bible Verses</h2> 
+        </div>
+
+        <!-- for loop starts here -->
+        {% for r in result %}
+
+        <div style="color: firebrick; background-color: #fff; padding-top: 30px;">
+            <h3>{{ r.book }}</h3>
+        </div>
+
+        <div style="color: black; font-size: 28px; background-color: turquoise; padding: 20px 20px;">
+            <p>{{ r.verse}}</p>
+        </div>
+        {% endfor %}
+        <!-- for loop ends here -->
+
+    </div> <!-- /container -->
+
+</body>
+</html>
